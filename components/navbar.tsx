@@ -22,11 +22,11 @@ export function Navbar({ className, ...props }: NavbarProps) {
       label: 'Calendário',
       active: pathname === `/${disciplineId}/calendar`,
     },
-    // {
-    //   href: `/${disciplineId}/aulas-ao-vivo`,
-    //   label: 'Aulas ao vivo',
-    //   active: pathname === `/${disciplineId}/aulas-ao-vivo`,
-    // },
+    {
+      href: `/${disciplineId}/live`,
+      label: 'Aulas ao vivo',
+      active: pathname === `/${disciplineId}/live`,
+    },
     // {
     //   href: `/${disciplineId}/aulas-conceituais`,
     //   label: 'Aulas conceituais',

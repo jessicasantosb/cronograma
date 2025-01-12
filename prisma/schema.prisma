@@ -39,6 +39,7 @@ model LiveClasses {
   id           String     @id @default(uuid())
   disciplineId String
   discipline   Discipline @relation("DisciplineToLiveClasses", fields: [disciplineId], references: [id])
+  name         String
   day          String
   hour         String
   createdAt    DateTime   @default(now())

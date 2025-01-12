@@ -16,10 +16,10 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { AlertModal } from '@/modals/alert-modal';
 
-import { CalendarColumn } from './columns';
+import { LiveColumn } from './columns';
 
 interface CellActionProps {
-  data: CalendarColumn;
+  data: LiveColumn;
 }
 
 export function CellAction({ data }: CellActionProps) {
@@ -31,7 +31,7 @@ export function CellAction({ data }: CellActionProps) {
   const onDelete = async () => {
     try {
       setIsLoading(true);
-      await axios.delete(`/api/${disciplineId}/calendar/${data.id}`);
+      await axios.delete(`/api/${disciplineId}/live/${data.id}`);
       refresh();
       toast.success(' deletada!');
     } catch (error) {
@@ -64,7 +64,7 @@ export function CellAction({ data }: CellActionProps) {
         <DropdownMenuContent align='end'>
           <DropdownMenuLabel>Ações</DropdownMenuLabel>
           <DropdownMenuItem
-            onClick={() => push(`/${disciplineId}/calendar/${data.id}`)}>
+            onClick={() => push(`/${disciplineId}/live/${data.id}`)}>
             <Edit className='size-4 mr-2' />
             Editar
           </DropdownMenuItem>

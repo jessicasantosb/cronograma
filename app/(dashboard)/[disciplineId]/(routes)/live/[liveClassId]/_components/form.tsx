@@ -1,7 +1,7 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Calendar } from '@prisma/client';
+import { LiveClasses } from '@prisma/client';
 import axios from 'axios';
 import { Trash } from 'lucide-react';
 import { useParams, useRouter } from 'next/navigation';
@@ -23,51 +23,47 @@ import { Heading } from '@/components/ui/heading';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
 import { AlertModal } from '@/modals/alert-modal';
-import { calendarFormSchema } from '@/schemas/form-schema';
+import { liveFormSchema } from '@/schemas/form-schema';
 
-interface CalendarFormProps {
-  initialData: Calendar | null;
+interface LiveFormProps {
+  initialData: LiveClasses | null;
 }
 
-type CalendarFormValues = z.infer<typeof calendarFormSchema>;
+type LiveFormValues = z.infer<typeof liveFormSchema>;
 
-export function CalendarForm({ initialData }: CalendarFormProps) {
+export function LiveForm({ initialData }: LiveFormProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const { disciplineId, calendarId } = useParams();
+  const { disciplineId, liveClassId } = useParams();
   const { refresh, push } = useRouter();
 
-  const title = initialData ? 'Editar Calendário' : 'Criar Calendário';
-  const description = initialData
-    ? 'Editar um Calendário'
-    : 'Adicionar novo Calendário';
-  const toastMessage = initialData
-    ? 'Calendário atualizado!'
-    : 'Calendário criado!';
+  const title = initialData ? 'Editar Aula' : 'Criar Aula';
+  const description = initialData ? 'Editar um Aula' : 'Adicionar novo Aula';
+  const toastMessage = initialData ? 'Aula atualizado!' : 'Aula criado!';
   const action = initialData ? 'Salvar mudanças' : 'Criar';
 
-  const form = useForm<CalendarFormValues>({
-    resolver: zodResolver(calendarFormSchema),
+  const form = useForm<LiveFormValues>({
+    resolver: zodResolver(liveFormSchema),
     defaultValues: initialData || {
-      name: '',
-      date: '',
+      day: '',
+      hour: '',
     },
   });
 
-  const onSubmit = async (values: CalendarFormValues) => {
+  const onSubmit = async (values: LiveFormValues) => {
     try {
       setIsLoading(true);
 
       if (initialData) {
-        await axios.patch(`/api/${disciplineId}/calendar/${calendarId}`, {
+        await axios.patch(`/api/${disciplineId}/live/${liveClassId}`, {
           values,
         });
       } else {
-        await axios.post(`/api/${disciplineId}/calendar`, {
+        await axios.post(`/api/${disciplineId}/live`, {
           values,
         });
       }
-      push(`/${disciplineId}/calendar`);
+      push(`/${disciplineId}/live`);
       toast.success(toastMessage);
     } catch (error) {
       console.log(error);
@@ -80,10 +76,10 @@ export function CalendarForm({ initialData }: CalendarFormProps) {
   const onDelete = async () => {
     try {
       setIsLoading(true);
-      await axios.delete(`/api/${disciplineId}/calendar/${calendarId}`);
+      await axios.delete(`/api/${disciplineId}/live/${liveClassId}`);
       refresh();
-      push(`/${disciplineId}/calendar`);
-      toast.success('Calendário deletado!');
+      push(`/${disciplineId}/live`);
+      toast.success('Aula deletado!');
     } catch (error) {
       console.log(error);
 
@@ -124,14 +120,14 @@ export function CalendarForm({ initialData }: CalendarFormProps) {
           <div className='grid grid-cols-2 gap-8'>
             <FormField
               control={form.control}
-              name='name'
+              name='day'
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Nome</FormLabel>
+                  <FormLabel>Dia</FormLabel>
                   <FormControl>
                     <Input
                       disabled={isLoading}
-                      placeholder='Digite o nome'
+                      placeholder='Digite o dia'
                       {...field}
                     />
                   </FormControl>
@@ -141,14 +137,14 @@ export function CalendarForm({ initialData }: CalendarFormProps) {
             />
             <FormField
               control={form.control}
-              name='date'
+              name='hour'
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Data</FormLabel>
+                  <FormLabel>Horário</FormLabel>
                   <FormControl>
                     <Input
                       disabled={isLoading}
-                      placeholder='Digite o intervalo dessa semana'
+                      placeholder='Digite o horário da aula'
                       {...field}
                     />
                   </FormControl>
