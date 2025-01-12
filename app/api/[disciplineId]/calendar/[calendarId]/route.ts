@@ -84,7 +84,7 @@ export async function DELETE(
 
     return NextResponse.json(calendar);
   } catch (error) {
-    if (error instanceof Error) console.log('[CALENDAR_PATCH]', error.message);
+    if (error instanceof Error) console.log('[CALENDAR_DELETE]', error.message);
     return new NextResponse('Internal Server Error', { status: 500 });
   }
 }
