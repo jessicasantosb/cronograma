@@ -1,4 +1,4 @@
-import { getCalendar } from '@/lib/calendar';
+import { getCalendars } from '@/lib/calendar';
 
 import { CalendarClient } from './_components/client';
 import { CalendarColumn } from './_components/columns';
@@ -10,7 +10,7 @@ interface CalendarPageProps {
 export default async function CalendarPage({ params }: CalendarPageProps) {
   const { disciplineId } = await params;
 
-  const calendar = await getCalendar(disciplineId);
+  const calendar = await getCalendars(disciplineId);
 
   const formatedCalendar: CalendarColumn[] = calendar.map((item) => ({
     id: item.id,

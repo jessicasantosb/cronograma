@@ -1,8 +1,6 @@
+import prisma from '@/lib/db';
 import { auth } from '@clerk/nextjs/server';
 import { NextResponse } from 'next/server';
-import { date } from 'zod';
-
-import prisma from '@/lib/db';
 
 export async function POST(
   req: Request,
@@ -12,27 +10,27 @@ export async function POST(
     const { userId } = await auth();
     const body = await req.json();
 
-    const { name, billboardId } = body.values;
+    const { name, date } = body.values;
 
     if (!userId) return new NextResponse('Unauthenticated', { status: 401 });
     if (!name) return new NextResponse('Name is required', { status: 400 });
-    if (!billboardId) {
-      return new NextResponse('Billboard id is required', { status: 400 });
+    if (!date) {
+      return new NextResponse('Date id is required', { status: 400 });
     }
     if (!params.disciplineId) {
-      return new NextResponse('Store id is required', { status: 400 });
+      return new NextResponse('Discipline id is required', { status: 400 });
     }
 
-    const storeByUserId = await prisma.store.findFirst({
+    const disciplineByUserId = await prisma.discipline.findFirst({
       where: { id: params.disciplineId, userId },
     });
 
-    if (!storeByUserId) {
+    if (!disciplineByUserId) {
       return new NextResponse('Unauthorized', { status: 403 });
     }
 
     const calendar = await prisma.calendar.create({
-      data: { label, date, disciplineId: params.disciplineId },
+      data: { name, date, disciplineId: params.disciplineId },
     });
 
     return NextResponse.json(calendar);
@@ -43,21 +41,87 @@ export async function POST(
 }
 
 export async function GET(
-  req: Request,
-  { params }: { params: { disciplineId: string } },
+  _req: Request,
+  { params }: { params: { calendarId: string } },
 ) {
   try {
-    if (!params.disciplineId) {
-      return new NextResponse('Discipline id is required', { status: 400 });
-    }
+    if (!params.calendarId)
+      return new NextResponse('Calendar id is required', { status: 400 });
 
-    const categories = await prisma.calendar.findMany({
-      where: { disciplineId: params.disciplineId },
+    const calendar = await prisma.calendar.findUnique({
+      where: { id: params.calendarId },
     });
 
-    return NextResponse.json(categories);
+    return NextResponse.json(calendar);
   } catch (error) {
     if (error instanceof Error) console.log('[CALENDAR_GET]', error.message);
+    return new NextResponse('Internal Server Error', { status: 500 });
+  }
+}
+
+export async function PATCH(
+  req: Request,
+  { params }: { params: { disciplineId: string; calendarId: string } },
+) {
+  try {
+    const { userId } = await auth();
+    const body = await req.json();
+
+    const { name, date } = body.values;
+
+    if (!userId) return new NextResponse('Unauthenticated', { status: 401 });
+    if (!name) return new NextResponse('Name is required', { status: 400 });
+    if (!date) return new NextResponse('Date is required', { status: 400 });
+    if (!params.calendarId) {
+      return new NextResponse('Calendar id is required', { status: 400 });
+    }
+
+    const disciplineByUserId = await prisma.discipline.findFirst({
+      where: { id: params.disciplineId, userId },
+    });
+
+    if (!disciplineByUserId) {
+      return new NextResponse('Unauthorized', { status: 403 });
+    }
+
+    const calendar = await prisma.calendar.updateMany({
+      where: { id: params.calendarId },
+      data: { name, date },
+    });
+
+    return NextResponse.json(calendar);
+  } catch (error) {
+    if (error instanceof Error) console.log('[CALENDAR_PATCH]', error.message);
+    return new NextResponse('Internal Server Error', { status: 500 });
+  }
+}
+
+export async function DELETE(
+  _req: Request,
+  { params }: { params: { disciplineId: string; calendarId: string } },
+) {
+  try {
+    const { userId } = await auth();
+
+    if (!userId) return new NextResponse('Unauthenticated', { status: 401 });
+    if (!params.calendarId)
+      return new NextResponse('Calendar id is required', { status: 400 });
+
+    const disciplineByUserId = await prisma.discipline.findFirst({
+      where: { id: params.disciplineId, userId },
+    });
+
+    if (!disciplineByUserId) {
+      return new NextResponse('Unauthorized', { status: 403 });
+    }
+
+    const calendar = await prisma.calendar.deleteMany({
+      where: { id: params.calendarId },
+    });
+
+    return NextResponse.json(calendar);
+  } catch (error) {
+    if (error instanceof Error) console.log('[CALENDAR_PATCH]', error.message);
     return new NextResponse('Internal Server Error', { status: 500 });
   }
 }

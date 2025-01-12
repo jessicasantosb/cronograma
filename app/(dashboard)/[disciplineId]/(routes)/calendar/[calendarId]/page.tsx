@@ -9,6 +9,7 @@ export default async function CalendarPage({
   const { calendarId } = await params;
 
   const calendar = await getCalendarById(calendarId);
+  // const calendars = await getCalendars(disciplineId);
 
   return (
     <main className='flex flex-col'>

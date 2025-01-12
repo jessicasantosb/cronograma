@@ -1,7 +1,7 @@
 'use client';
 
-import { Copy, Edit, MoreHorizontal, Trash } from 'lucide-react';
 import axios from 'axios';
+import { Edit, MoreHorizontal, Trash } from 'lucide-react';
 import { useParams, useRouter } from 'next/navigation';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
@@ -14,7 +14,6 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { onCopy } from '@/utils/on-copy';
 import { AlertModal } from '@/modals/alert-modal';
 
 import { CalendarColumn } from './columns';
@@ -64,12 +63,8 @@ export function CellAction({ data }: CellActionProps) {
 
         <DropdownMenuContent align='end'>
           <DropdownMenuLabel>Ações</DropdownMenuLabel>
-          <DropdownMenuItem onClick={() => onCopy(data.id)}>
-            <Copy className='size-4 mr-2' />
-            Copiar ID
-          </DropdownMenuItem>
           <DropdownMenuItem
-            onClick={() => push(`/${disciplineId}/categories/${data.id}`)}>
+            onClick={() => push(`/${disciplineId}/calendar/${data.id}`)}>
             <Edit className='size-4 mr-2' />
             Editar
           </DropdownMenuItem>

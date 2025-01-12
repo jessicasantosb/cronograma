@@ -1,6 +1,6 @@
 import prisma from './db';
 
-export const getCalendar = async (disciplineId: string) => {
+export const getCalendars = async (disciplineId: string) => {
   return await prisma.calendar.findMany({
     where: { disciplineId },
     orderBy: { createdAt: 'desc' },
