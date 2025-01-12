@@ -63,7 +63,7 @@ model Lessons {
   id           String     @id @default(uuid())
   disciplineId String
   discipline   Discipline @relation("DisciplineToLessons", fields: [disciplineId], references: [id])
-  day          String
+  deadline     String
   name         String
   createdAt    DateTime   @default(now())
   updatedAt    DateTime   @updatedAt

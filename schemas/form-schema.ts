@@ -18,3 +18,8 @@ export const conceptualLessonsFormSchema = z.object({
   day: z.string().min(1, { message: 'O dia é obrigatório' }),
   name: z.string().min(1, { message: 'O nome é obrigatório' }),
 });
+
+export const lessonsFormSchema = z.object({
+  name: z.string().min(1, { message: 'O nome é obrigatório' }),
+  deadline: z.string().min(1, { message: 'O prazo é obrigatório' }),
+});

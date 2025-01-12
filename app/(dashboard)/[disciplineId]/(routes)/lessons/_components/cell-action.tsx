@@ -15,10 +15,10 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { AlertModal } from '@/modals/alert-modal';
-import { ConceptualLessonsColumn } from './columns';
+import { LessonsColumn } from './columns';
 
 interface CellActionProps {
-  data: ConceptualLessonsColumn;
+  data: LessonsColumn;
 }
 
 export function CellAction({ data }: CellActionProps) {
@@ -30,9 +30,9 @@ export function CellAction({ data }: CellActionProps) {
   const onDelete = async () => {
     try {
       setIsLoading(true);
-      await axios.delete(`/api/${disciplineId}/conceptual-lessons/${data.id}`);
+      await axios.delete(`/api/${disciplineId}/lessons/${data.id}`);
       refresh();
-      toast.success('Aula deletada!');
+      toast.success('Atividade deletada!');
     } catch (error) {
       console.log(error);
 
@@ -63,9 +63,7 @@ export function CellAction({ data }: CellActionProps) {
         <DropdownMenuContent align='end'>
           <DropdownMenuLabel>Ações</DropdownMenuLabel>
           <DropdownMenuItem
-            onClick={() =>
-              push(`/${disciplineId}/conceptual-lessons/${data.id}`)
-            }>
+            onClick={() => push(`/${disciplineId}/lessons/${data.id}`)}>
             <Edit className='size-4 mr-2' />
             Editar
           </DropdownMenuItem>

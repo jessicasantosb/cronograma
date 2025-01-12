@@ -32,15 +32,15 @@ export function Navbar({ className, ...props }: NavbarProps) {
       label: 'Aulas conceituais',
       active: pathname === `/${disciplineId}/conceptual-lessons`,
     },
+    {
+      href: `/${disciplineId}/lessons`,
+      label: 'Atividades',
+      active: pathname === `/${disciplineId}/lessons`,
+    },
     // {
     //   href: `/${disciplineId}/topicos`,
     //   label: 'Tópicos',
     //   active: pathname === `/${disciplineId}/topicos`,
-    // },
-    // {
-    //   href: `/${disciplineId}/atividades`,
-    //   label: 'Atividades',
-    //   active: pathname === `/${disciplineId}/atividades`,
     // },
     // {
     //   href: `/${disciplineId}/prova`,
