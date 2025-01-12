@@ -1,7 +1,7 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { LiveClasses } from '@prisma/client';
+import { ConceptualLessons } from '@prisma/client';
 import axios from 'axios';
 import { Trash } from 'lucide-react';
 import { useParams, useRouter } from 'next/navigation';
@@ -23,18 +23,20 @@ import { Heading } from '@/components/ui/heading';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
 import { AlertModal } from '@/modals/alert-modal';
-import { liveFormSchema } from '@/schemas/form-schema';
+import { conceptualLessonsFormSchema } from '@/schemas/form-schema';
 
-interface LiveFormProps {
-  initialData: LiveClasses | null;
+interface ConceptualLessonsFormProps {
+  initialData: ConceptualLessons | null;
 }
 
-type LiveFormValues = z.infer<typeof liveFormSchema>;
+type ConceptualLessonsFormValues = z.infer<typeof conceptualLessonsFormSchema>;
 
-export function LiveForm({ initialData }: LiveFormProps) {
+export function ConceptualLessonsForm({
+  initialData,
+}: ConceptualLessonsFormProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const { disciplineId, liveClassId } = useParams();
+  const { disciplineId, conceptualLessonsId } = useParams();
   const { refresh, push } = useRouter();
 
   const title = initialData ? 'Editar Aula' : 'Criar Aula';
@@ -42,28 +44,31 @@ export function LiveForm({ initialData }: LiveFormProps) {
   const toastMessage = initialData ? 'Aula atualizado!' : 'Aula criado!';
   const action = initialData ? 'Salvar mudanças' : 'Criar';
 
-  const form = useForm<LiveFormValues>({
-    resolver: zodResolver(liveFormSchema),
+  const form = useForm<ConceptualLessonsFormValues>({
+    resolver: zodResolver(conceptualLessonsFormSchema),
     defaultValues: initialData || {
       day: '',
-      hour: '',
+      name: '',
     },
   });
 
-  const onSubmit = async (values: LiveFormValues) => {
+  const onSubmit = async (values: ConceptualLessonsFormValues) => {
     try {
       setIsLoading(true);
 
       if (initialData) {
-        await axios.patch(`/api/${disciplineId}/live/${liveClassId}`, {
-          values,
-        });
+        await axios.patch(
+          `/api/${disciplineId}/conceptual-lessons/${conceptualLessonsId}`,
+          {
+            values,
+          },
+        );
       } else {
-        await axios.post(`/api/${disciplineId}/live`, {
+        await axios.post(`/api/${disciplineId}/conceptual-lessons`, {
           values,
         });
       }
-      push(`/${disciplineId}/live`);
+      push(`/${disciplineId}/conceptual-lessons`);
       toast.success(toastMessage);
     } catch (error) {
       console.log(error);
@@ -76,10 +81,12 @@ export function LiveForm({ initialData }: LiveFormProps) {
   const onDelete = async () => {
     try {
       setIsLoading(true);
-      await axios.delete(`/api/${disciplineId}/live/${liveClassId}`);
+      await axios.delete(
+        `/api/${disciplineId}/conceptual-lessons/${conceptualLessonsId}`,
+      );
       refresh();
-      push(`/${disciplineId}/live`);
-      toast.success('Aula deletado!');
+      push(`/${disciplineId}/conceptual-lessons`);
+      toast.success('Aula deletada!');
     } catch (error) {
       console.log(error);
 
@@ -137,14 +144,14 @@ export function LiveForm({ initialData }: LiveFormProps) {
             />
             <FormField
               control={form.control}
-              name='hour'
+              name='name'
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Horário</FormLabel>
+                  <FormLabel>Tema</FormLabel>
                   <FormControl>
                     <Input
                       disabled={isLoading}
-                      placeholder='Digite o horário da aula'
+                      placeholder='Digite o tema'
                       {...field}
                     />
                   </FormControl>

@@ -27,11 +27,11 @@ export function Navbar({ className, ...props }: NavbarProps) {
       label: 'Aulas ao vivo',
       active: pathname === `/${disciplineId}/live`,
     },
-    // {
-    //   href: `/${disciplineId}/aulas-conceituais`,
-    //   label: 'Aulas conceituais',
-    //   active: pathname === `/${disciplineId}/aulas-conceituais`,
-    // },
+    {
+      href: `/${disciplineId}/conceptual-lessons`,
+      label: 'Aulas conceituais',
+      active: pathname === `/${disciplineId}/conceptual-lessons`,
+    },
     // {
     //   href: `/${disciplineId}/topicos`,
     //   label: 'Tópicos',

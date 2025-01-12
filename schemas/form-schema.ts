@@ -13,3 +13,8 @@ export const liveFormSchema = z.object({
   day: z.string().min(1, { message: 'O dia é obrigatório' }),
   hour: z.string().min(1, { message: 'O horário é obrigatório' }),
 });
+
+export const conceptualLessonsFormSchema = z.object({
+  day: z.string().min(1, { message: 'O dia é obrigatório' }),
+  name: z.string().min(1, { message: 'O nome é obrigatório' }),
+});
