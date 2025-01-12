@@ -14,7 +14,7 @@ export const columns: ColumnDef<LiveColumn>[] = [
   {
     accessorKey: 'hour',
     header: 'Horário',
-    cell: ({ row }) => row.original.day,
+    cell: ({ row }) => row.original.hour,
   },
   { id: 'actions', cell: ({ row }) => <CellAction data={row.original} /> },
 ];
