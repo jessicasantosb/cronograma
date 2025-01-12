@@ -1,0 +1,108 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Discipline {
+  id                String              @id @default(uuid())
+  name              String
+  userId            String
+  calendar          Calendar[]          @relation("DisciplineToCalendar")
+  liveClasses       LiveClasses[]       @relation("DisciplineToLiveClasses")
+  conceptualLessons ConceptualLessons[] @relation("DisciplineToConceptualLessons")
+  lessons           Lessons[]           @relation("DisciplineToLessons")
+  topics            Topics[]            @relation("DisciplineToTopics")
+  test              Test[]              @relation("DisciplineToTest")
+  grade             Grades[]            @relation("DisciplineToGrades")
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+}
+
+model Calendar {
+  id           String     @id @default(uuid())
+  disciplineId String
+  discipline   Discipline @relation("DisciplineToCalendar", fields: [disciplineId], references: [id])
+  name         String
+  date         String
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  @@index([disciplineId])
+}
+
+model LiveClasses {
+  id           String     @id @default(uuid())
+  disciplineId String
+  discipline   Discipline @relation("DisciplineToLiveClasses", fields: [disciplineId], references: [id])
+  day          String
+  hour         String
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  @@index([disciplineId])
+}
+
+model ConceptualLessons {
+  id           String     @id @default(uuid())
+  disciplineId String
+  discipline   Discipline @relation("DisciplineToConceptualLessons", fields: [disciplineId], references: [id])
+  day          String
+  name         String
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  @@index([disciplineId])
+}
+
+model Lessons {
+  id           String     @id @default(uuid())
+  disciplineId String
+  discipline   Discipline @relation("DisciplineToLessons", fields: [disciplineId], references: [id])
+  day          String
+  name         String
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  @@index([disciplineId])
+}
+
+model Topics {
+  id           String     @id @default(uuid())
+  disciplineId String
+  discipline   Discipline @relation("DisciplineToTopics", fields: [disciplineId], references: [id])
+  day          String
+  name         String
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  @@index([disciplineId])
+}
+
+model Test {
+  id           String     @id @default(uuid())
+  disciplineId String
+  discipline   Discipline @relation("DisciplineToTest", fields: [disciplineId], references: [id])
+  day          String
+  name         String
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  @@index([disciplineId])
+}
+
+model Grades {
+  id           String     @id @default(uuid())
+  disciplineId String
+  discipline   Discipline @relation("DisciplineToGrades", fields: [disciplineId], references: [id])
+  day          String
+  name         String
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  @@index([disciplineId])
+}

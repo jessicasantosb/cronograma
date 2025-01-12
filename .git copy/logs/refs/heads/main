@@ -1,0 +1,89 @@
+0000000000000000000000000000000000000000 66d3fd219070be20e09471a21388c2e9329d5958 Jessica <jessica.santosb@outlook.com> 1734040785 -0300	clone: from github.com:jessicasantosb/e-commerce.git
+66d3fd219070be20e09471a21388c2e9329d5958 33da764f792b82f895830340e3d764aa1c74c75b Jessica <jessica.santosb@outlook.com> 1734088360 -0300	commit: feat: add shadcn configs
+33da764f792b82f895830340e3d764aa1c74c75b c73a498d17fa67620217a77612c4d0f1f829b130 Jessica <jessica.santosb@outlook.com> 1734094129 -0300	commit: feat: setup cleark
+c73a498d17fa67620217a77612c4d0f1f829b130 8515d9a77d009ed1ccec8cb38ee5abae7748f901 Jessica <jessica.santosb@outlook.com> 1734094769 -0300	commit: feat: create auth layout
+8515d9a77d009ed1ccec8cb38ee5abae7748f901 402f0fd9b5f3103047eb84890b7c87797ded6ba8 Jessica <jessica.santosb@outlook.com> 1734097035 -0300	commit: feat: add user button to home page
+402f0fd9b5f3103047eb84890b7c87797ded6ba8 f8fb94121c8f5e501a614e4f98bd9cf2993eb7e9 Jessica <jessica.santosb@outlook.com> 1734110120 -0300	commit: feat: create modal component
+f8fb94121c8f5e501a614e4f98bd9cf2993eb7e9 f642048fdfc49da7de38c8f4db7abc3b003c5ff0 Jessica <jessica.santosb@outlook.com> 1734113902 -0300	commit: feat: create modal store
+f642048fdfc49da7de38c8f4db7abc3b003c5ff0 38f054cc2bc606c2f7519b6ec5696a97d892b9fa Jessica <jessica.santosb@outlook.com> 1734114303 -0300	commit: feat: create modal to StoreModal
+38f054cc2bc606c2f7519b6ec5696a97d892b9fa 6519ab94072706a8563d9987e68e0e114ed28b16 Jessica <jessica.santosb@outlook.com> 1734115372 -0300	commit: feat: create modal provider
+6519ab94072706a8563d9987e68e0e114ed28b16 8746458ec217722473c6b44860dc3922e37eb96e Jessica <jessica.santosb@outlook.com> 1734200565 -0300	commit: fix: add use client to provider
+8746458ec217722473c6b44860dc3922e37eb96e 1e9b73514d3ef136f28e5b919a1234fdd9618f6b Jessica <jessica.santosb@outlook.com> 1734201689 -0300	commit: feat: use modal on home page
+1e9b73514d3ef136f28e5b919a1234fdd9618f6b e30f4afc9f0df608fe0941bfc68c1b959f2eaef6 Jessica <jessica.santosb@outlook.com> 1734214171 -0300	commit: feat: add form field for name
+e30f4afc9f0df608fe0941bfc68c1b959f2eaef6 7056cc7268f00296bdb1d91c5ed3facbc3479988 Jessica <jessica.santosb@outlook.com> 1734259599 -0300	commit: feat: setup prisma client
+7056cc7268f00296bdb1d91c5ed3facbc3479988 a88dc71513f95f42549037c825cbe2381e2dc1b9 Jessica <jessica.santosb@outlook.com> 1734262297 -0300	commit: feat: connect to supabase
+a88dc71513f95f42549037c825cbe2381e2dc1b9 9c19f3aab533108cb38ecabc2e2608b262f8be05 Jessica <jessica.santosb@outlook.com> 1734263212 -0300	commit: feat: create store schema
+9c19f3aab533108cb38ecabc2e2608b262f8be05 ee644b76b3f22d11ae71c415bb2b5254b7a8a280 Jessica <jessica.santosb@outlook.com> 1734263386 -0300	commit: feat: create post store route
+ee644b76b3f22d11ae71c415bb2b5254b7a8a280 a2c6c5d59fc3125053b76d1eb3f8d01d864cf32a Jessica <jessica.santosb@outlook.com> 1734285299 -0300	commit: feat: handle post new store
+a2c6c5d59fc3125053b76d1eb3f8d01d864cf32a e28f56a104530ad45e35398a7978b0718a106680 Jessica <jessica.santosb@outlook.com> 1734286722 -0300	commit: feat: create submit new store toast
+e28f56a104530ad45e35398a7978b0718a106680 59e77a585b4edd12b0490caca74c4b7add9db437 Jessica <jessica.santosb@outlook.com> 1734298711 -0300	commit: feat: create dashboard layout
+59e77a585b4edd12b0490caca74c4b7add9db437 b1e8fe9b836f3367e7d96dbb04acb435f89d60d4 Jessica <jessica.santosb@outlook.com> 1734348479 -0300	commit: feat: create setup layout
+b1e8fe9b836f3367e7d96dbb04acb435f89d60d4 d95dea2d639cab1b569d6086ec3e571bfc9c411e Jessica <jessica.santosb@outlook.com> 1734351244 -0300	commit: feat: create dashboard page
+d95dea2d639cab1b569d6086ec3e571bfc9c411e 08373f71ab3582e0ae6cf5cf7749f4bb057bb46b Jessica <jessica.santosb@outlook.com> 1734351331 -0300	commit: feat: change root page return
+08373f71ab3582e0ae6cf5cf7749f4bb057bb46b f173b3ec25eff90f90174095d4ab0c4cabaf9ea7 Jessica <jessica.santosb@outlook.com> 1734373032 -0300	commit: feat: send user to dashboard after creating store
+f173b3ec25eff90f90174095d4ab0c4cabaf9ea7 3038dc16c14278df9f9d290af2ea89d7d9fd874b Jessica <jessica.santosb@outlook.com> 1734456873 -0300	commit: feat: create navbar
+3038dc16c14278df9f9d290af2ea89d7d9fd874b e3194b67d8baf8431988a88c1259570229a17934 Jessica <jessica.santosb@outlook.com> 1734456950 -0300	commit: feat: create header
+e3194b67d8baf8431988a88c1259570229a17934 bcd02bb44caa0a3f1b08e0841bed88e0bfea32e6 Jessica <jessica.santosb@outlook.com> 1734472795 -0300	commit: feat: create store switcher
+bcd02bb44caa0a3f1b08e0841bed88e0bfea32e6 035536c5d8c46dba51b2c72d230fe783e1f9fd41 Jessica <jessica.santosb@outlook.com> 1734472823 -0300	commit: fix: send stores to store switcher
+035536c5d8c46dba51b2c72d230fe783e1f9fd41 830e74a4a013dd828a33a90265af5d62198aea14 Jessica <jessica.santosb@outlook.com> 1734478400 -0300	commit: feat: create functions to get stores
+830e74a4a013dd828a33a90265af5d62198aea14 bdb0da2ba0c0523f5adbdc15c85d1dfcaca51ef7 Jessica <jessica.santosb@outlook.com> 1734528019 -0300	commit: feat: create heading component
+bdb0da2ba0c0523f5adbdc15c85d1dfcaca51ef7 45d874cebe03ee092a80998c75e1e71c77cb1f0f Jessica <jessica.santosb@outlook.com> 1734531045 -0300	commit: feat: create form schema
+45d874cebe03ee092a80998c75e1e71c77cb1f0f a7bd20202b5be0a9d55581bd42c2330b697813e9 Jessica <jessica.santosb@outlook.com> 1734531171 -0300	commit: feat: create store form field
+a7bd20202b5be0a9d55581bd42c2330b697813e9 74a28127bad7b9e797b0ad028f276fcd8e25abf3 Jessica <jessica.santosb@outlook.com> 1734531191 -0300	commit: refactor: use form field component
+74a28127bad7b9e797b0ad028f276fcd8e25abf3 10a3e93d191c53a4984bafc5e5a864c13ba8323b Jessica <jessica.santosb@outlook.com> 1734538039 -0300	commit: feat: create settings form
+10a3e93d191c53a4984bafc5e5a864c13ba8323b 9f5f5532163e8cecb7fc3de56586cd2918e4d498 Jessica <jessica.santosb@outlook.com> 1734543358 -0300	commit: feat: create update store name route
+9f5f5532163e8cecb7fc3de56586cd2918e4d498 6829bb961710bbcac7fb2645242ad4a599883f26 Jessica <jessica.santosb@outlook.com> 1734543386 -0300	commit: feat: create delete store route
+6829bb961710bbcac7fb2645242ad4a599883f26 f253cc3110a5f061737ef5acf792d4857a455f02 Jessica <jessica.santosb@outlook.com> 1734544959 -0300	commit: feat: handle uodate store name
+f253cc3110a5f061737ef5acf792d4857a455f02 a31c395c632ac74812ead8a7476c1f571136335c Jessica <jessica.santosb@outlook.com> 1734546119 -0300	commit: feat: create alert modal
+a31c395c632ac74812ead8a7476c1f571136335c 86efa60c95ab47289ed8417e26354615aa0b9455 Jessica <jessica.santosb@outlook.com> 1734546797 -0300	commit: feat: handle delete store
+86efa60c95ab47289ed8417e26354615aa0b9455 a2b2dfa34c5c47405bb6eb3379c770451ddea9a1 Jessica <jessica.santosb@outlook.com> 1734546870 -0300	commit: refactor: update imports
+a2b2dfa34c5c47405bb6eb3379c770451ddea9a1 fa9df42edeb572a6c02fff9e3ce711f1914f3506 Jessica <jessica.santosb@outlook.com> 1734565285 -0300	commit: feat: create api alert component
+fa9df42edeb572a6c02fff9e3ce711f1914f3506 540adf036b9f3fc4cb427b6e970fee437e60091f Jessica <jessica.santosb@outlook.com> 1734566014 -0300	commit: feat: handle api route on copy
+540adf036b9f3fc4cb427b6e970fee437e60091f aba7aef892c24cc0677f79ebf70e013e18da9422 Jessica <jessica.santosb@outlook.com> 1734566795 -0300	commit: feat: create useOrigin hook
+aba7aef892c24cc0677f79ebf70e013e18da9422 a137332aef74ab2e9903d129427ed1ad21ba915c Jessica <jessica.santosb@outlook.com> 1734610016 -0300	commit: feat: use useOrigin hook
+a137332aef74ab2e9903d129427ed1ad21ba915c cce65288ecdb1250b57972e4752e58e16718f5b9 Jessica <jessica.santosb@outlook.com> 1734615046 -0300	commit: feat: create billboard schema
+cce65288ecdb1250b57972e4752e58e16718f5b9 6b88e786e0a05c20bd755eb9f89efbbbd5b05fe6 Jessica <jessica.santosb@outlook.com> 1734615865 -0300	commit: feat: create billboard page
+6b88e786e0a05c20bd755eb9f89efbbbd5b05fe6 b9084d637ac84bc63757f48b0ca1f88393604a98 Jessica <jessica.santosb@outlook.com> 1734615883 -0300	commit: feat: update navbar links
+b9084d637ac84bc63757f48b0ca1f88393604a98 52b118169be91831d3ed43fe84681d87b159958b Jessica <jessica.santosb@outlook.com> 1734624141 -0300	commit: fix: handle params promise
+52b118169be91831d3ed43fe84681d87b159958b e60895f2f328ea569b85b9c2024674a9c45973af Jessica <jessica.santosb@outlook.com> 1734628922 -0300	commit: feat: create billboard client
+e60895f2f328ea569b85b9c2024674a9c45973af d7308c7139981b4033b68771d37bd82eca0c23b8 Jessica <jessica.santosb@outlook.com> 1734700709 -0300	commit: feat: create billboard form
+d7308c7139981b4033b68771d37bd82eca0c23b8 2dc0c93295679cb2daf4163e3652c2e20c8cf2be Jessica <jessica.santosb@outlook.com> 1734701590 -0300	commit: fix: handle settings params promise
+2dc0c93295679cb2daf4163e3652c2e20c8cf2be f2306f00f8ea137e14b27b88a4fde750b30b19c1 Jessica <jessica.santosb@outlook.com> 1734711237 -0300	commit: fix: handle billboard params promise
+f2306f00f8ea137e14b27b88a4fde750b30b19c1 9970b3745c5439b19665bd6bb733c53919f91b75 Jessica <jessica.santosb@outlook.com> 1734714345 -0300	commit: feat: create image upload component
+9970b3745c5439b19665bd6bb733c53919f91b75 4f545a2ed690a55c5a920f6fc8348533e74689f0 Jessica <jessica.santosb@outlook.com> 1734716366 -0300	commit: feat: add image upload and handle actions
+4f545a2ed690a55c5a920f6fc8348533e74689f0 cd5c6d0b924b20f164ef9256eaa55d1fd06401f7 Jessica <jessica.santosb@outlook.com> 1734717202 -0300	commit: fix: handle error type
+cd5c6d0b924b20f164ef9256eaa55d1fd06401f7 e31fce97df45e7028eeb28225cbd5dff141e7fe6 Jessica <jessica.santosb@outlook.com> 1734806921 -0300	commit: fix: change unauthenticated response message
+e31fce97df45e7028eeb28225cbd5dff141e7fe6 cea1097504fd0d15423147b94c575c891f8790f4 Jessica <jessica.santosb@outlook.com> 1734806956 -0300	commit: feat: create billboard post route
+cea1097504fd0d15423147b94c575c891f8790f4 a052017ead7ae2568f6b27c62c8d6fa2e4c5b621 Jessica <jessica.santosb@outlook.com> 1734807152 -0300	commit: feat: create get all billboard route
+a052017ead7ae2568f6b27c62c8d6fa2e4c5b621 c739b3cead6e7437e587512e9fe8b3124e370b68 Jessica <jessica.santosb@outlook.com> 1734823521 -0300	commit: feat: create delete billboard route
+c739b3cead6e7437e587512e9fe8b3124e370b68 e4e4ec8ca98b01b991574af8fe3a6ef24c34bcf2 Jessica <jessica.santosb@outlook.com> 1734824401 -0300	commit: feat: create get billboard route
+e4e4ec8ca98b01b991574af8fe3a6ef24c34bcf2 ec219fb7a91c600424b5cff8cddf6e4f2c78550f Jessica <jessica.santosb@outlook.com> 1734824656 -0300	commit: feat: redirect after billboard submit success
+ec219fb7a91c600424b5cff8cddf6e4f2c78550f 22efe7d88d6b29e3bbbe66f3002b55514d1dc264 Jessica <jessica.santosb@outlook.com> 1734867590 -0300	commit: fix: get refresh from router hook
+22efe7d88d6b29e3bbbe66f3002b55514d1dc264 d5298271438ee224e3542cd74a59356225a8000e Jessica <jessica.santosb@outlook.com> 1734868765 -0300	commit: feat: create get all billboards lib
+d5298271438ee224e3542cd74a59356225a8000e a1a4fd0d9f7ca438e36877b8b883c4bcc95f8c69 Jessica <jessica.santosb@outlook.com> 1735319907 -0300	commit: feat: get all billboard
+a1a4fd0d9f7ca438e36877b8b883c4bcc95f8c69 61f8a88779a7528e01e2600368e9088ea82d495d Jessica <jessica.santosb@outlook.com> 1735322792 -0300	commit: feat: create table component
+61f8a88779a7528e01e2600368e9088ea82d495d 7d1bc47d0a3ae4ef7b200fea0100b15504709c51 Jessica <jessica.santosb@outlook.com> 1735337829 -0300	commit: feat: add table filter
+7d1bc47d0a3ae4ef7b200fea0100b15504709c51 80753380321d501214a1c59f032cc69d12aff9c2 Jessica <jessica.santosb@outlook.com> 1735338139 -0300	commit: feat: displau data in pt-br
+80753380321d501214a1c59f032cc69d12aff9c2 d3b62adb35a706eab01bc36278373aae2baec9e7 Jessica <jessica.santosb@outlook.com> 1736166363 -0300	commit: feat: create action cell
+d3b62adb35a706eab01bc36278373aae2baec9e7 6fa4fe8d60e6f80f6e339237d16baeaca5abad9b Jessica <jessica.santosb@outlook.com> 1736168097 -0300	commit: feat: add dropdown items
+6fa4fe8d60e6f80f6e339237d16baeaca5abad9b e62ae958be07aca3f80aca5566e7472f247c1354 Jessica <jessica.santosb@outlook.com> 1736168231 -0300	commit: feat: handle on copy
+e62ae958be07aca3f80aca5566e7472f247c1354 3e1ad46e683d6f6c935b3453580ffdffe07f4702 Jessica <jessica.santosb@outlook.com> 1736184586 -0300	commit: feat: handle update item
+3e1ad46e683d6f6c935b3453580ffdffe07f4702 fcce83c49bae6e3da7f476968711af53c0fc66b6 Jessica <jessica.santosb@outlook.com> 1736187768 -0300	commit: fix: delete billboard
+fcce83c49bae6e3da7f476968711af53c0fc66b6 6df8952bbcf8c7bec0fa8ca5050c7771a38afacc Jessica <jessica.santosb@outlook.com> 1736188985 -0300	commit: feat: handle delele billboard
+6df8952bbcf8c7bec0fa8ca5050c7771a38afacc 71e975e858122a1613c758ad5399f3341b8d60db Jessica <jessica.santosb@outlook.com> 1736343356 -0300	commit: feat: create environment variables types
+71e975e858122a1613c758ad5399f3341b8d60db 36691467621bec2bedd6c0b96b9b4fe05bca794b Jessica <jessica.santosb@outlook.com> 1736361609 -0300	commit: feat: create billboard api call
+36691467621bec2bedd6c0b96b9b4fe05bca794b 9dbdd55bde33d6b46dbfeb63e487bc88612118d7 Jessica <jessica.santosb@outlook.com> 1736361894 -0300	commit: feat: make api routes public
+9dbdd55bde33d6b46dbfeb63e487bc88612118d7 0296c96305594d7fb22e637025c2931e19ce97eb Jessica <jessica.santosb@outlook.com> 1736505071 -0300	commit: feat: update prisma
+0296c96305594d7fb22e637025c2931e19ce97eb 99c3504be382b56505a5298db89fc70627db44f0 Jessica <jessica.santosb@outlook.com> 1736505204 -0300	commit: refactor: change badge text to portuguese
+99c3504be382b56505a5298db89fc70627db44f0 f17cca4fc4c4f01c7d29205f35f172dcafaedd39 Jessica <jessica.santosb@outlook.com> 1736505226 -0300	commit: feat: create Category schema
+f17cca4fc4c4f01c7d29205f35f172dcafaedd39 1dd60e8f9c0ae6f73d1e09d3357201bc8d374178 Jessica <jessica.santosb@outlook.com> 1736507123 -0300	commit: feat: create categories page
+1dd60e8f9c0ae6f73d1e09d3357201bc8d374178 5c8927906bddf8c93f33e0698ae04071e8b2be27 Jessica <jessica.santosb@outlook.com> 1736507172 -0300	commit: feat: create categories column
+5c8927906bddf8c93f33e0698ae04071e8b2be27 305601b44e4529d9f9b6298bcb91ede628c861b3 Jessica <jessica.santosb@outlook.com> 1736507486 -0300	commit: feat: display all categories
+305601b44e4529d9f9b6298bcb91ede628c861b3 e19f85194d10ebe914554022623827ce72e4b17d Jessica <jessica.santosb@outlook.com> 1736507988 -0300	commit: refactor: correct type name
+e19f85194d10ebe914554022623827ce72e4b17d a59ce46040267ac9311e8c81ddd748068e64f070 Jessica <jessica.santosb@outlook.com> 1736513683 -0300	commit: feat: create new category form
+a59ce46040267ac9311e8c81ddd748068e64f070 ef70d81641630cf9d170ebb302d53104798c400b Jessica <jessica.santosb@outlook.com> 1736513751 -0300	commit: fix: create select componet
+ef70d81641630cf9d170ebb302d53104798c400b 99ca18f028b3d78c3ffb6da0719903fd17330663 Jessica <jessica.santosb@outlook.com> 1736513762 -0300	commit: feat: add form to category page
+99ca18f028b3d78c3ffb6da0719903fd17330663 7acac3f256d242e4daf26342babea6163470f1fc Jessica <jessica.santosb@outlook.com> 1736515063 -0300	commit: feat: create categories route
+7acac3f256d242e4daf26342babea6163470f1fc 2fe9c4ee7664c10ddabe4b55b806b65a0edf6c0d Jessica <jessica.santosb@outlook.com> 1736515607 -0300	commit: feat: create category route
+2fe9c4ee7664c10ddabe4b55b806b65a0edf6c0d ca18da498ad9ff9e2ee77bde0a46712040bc04f7 Jessica <jessica.santosb@outlook.com> 1736515724 -0300	commit: reafctor: organize imports
+ca18da498ad9ff9e2ee77bde0a46712040bc04f7 609d32c0b3560a7c2f17a2a165a904411d8940ba Jessica <jessica.santosb@outlook.com> 1736516172 -0300	commit: feat: create categories action cell
