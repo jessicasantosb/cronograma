@@ -37,11 +37,11 @@ export function Navbar({ className, ...props }: NavbarProps) {
       label: 'Atividades',
       active: pathname === `/${disciplineId}/lessons`,
     },
-    // {
-    //   href: `/${disciplineId}/topicos`,
-    //   label: 'Tópicos',
-    //   active: pathname === `/${disciplineId}/topicos`,
-    // },
+    {
+      href: `/${disciplineId}/topics`,
+      label: 'Tópicos',
+      active: pathname === `/${disciplineId}/topics`,
+    },
     // {
     //   href: `/${disciplineId}/prova`,
     //   label: 'Prova',
