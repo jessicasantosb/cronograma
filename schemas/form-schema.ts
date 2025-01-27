@@ -28,3 +28,8 @@ export const topicsFormSchema = z.object({
   title: z.string().min(1, { message: 'O título é obrigatório' }),
   description: z.string().min(1, { message: 'A descrição é obrigatória' }),
 });
+
+export const testsFormSchema = z.object({
+  day: z.string().min(1, { message: 'O dia é obrigatório' }),
+  topic: z.string().min(1, { message: 'O tópico é obrigatório' }),
+});
