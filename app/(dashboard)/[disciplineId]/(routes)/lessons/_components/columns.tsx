@@ -13,8 +13,11 @@ export const columns: ColumnDef<LessonsColumn>[] = [
   {
     accessorKey: 'name',
     header: 'Nome',
-    cell: ({ row }) => row.original.name,
   },
-  { accessorKey: 'deadline', header: 'Prazo' },
+  {
+    accessorKey: 'deadline',
+    header: 'Prazo',
+    cell: ({ row }) => row.original.deadline,
+  },
   { id: 'actions', cell: ({ row }) => <CellAction data={row.original} /> },
 ];

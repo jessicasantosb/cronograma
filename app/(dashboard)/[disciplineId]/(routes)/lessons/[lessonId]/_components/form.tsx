@@ -34,16 +34,16 @@ type LessonsFormValues = z.infer<typeof lessonsFormSchema>;
 export function LessonsForm({ initialData }: LessonsFormProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const { disciplineId, LessonsId } = useParams();
+  const { disciplineId, lessonId } = useParams();
   const { refresh, push } = useRouter();
 
   const title = initialData ? 'Editar Atividade' : 'Criar Atividade';
   const description = initialData
-    ? 'Editar um Atividade'
+    ? 'Editar uma Atividade'
     : 'Adicionar nova Atividade';
   const toastMessage = initialData
-    ? 'Atividade atualizado!'
-    : 'Atividade criado!';
+    ? 'Atividade atualizada!'
+    : 'Atividade criada!';
   const action = initialData ? 'Salvar mudanças' : 'Criar';
 
   const form = useForm<LessonsFormValues>({
@@ -55,11 +55,13 @@ export function LessonsForm({ initialData }: LessonsFormProps) {
   });
 
   const onSubmit = async (values: LessonsFormValues) => {
+    console.log();
+    
     try {
       setIsLoading(true);
 
       if (initialData) {
-        await axios.patch(`/api/${disciplineId}/lessons/${LessonsId}`, {
+        await axios.patch(`/api/${disciplineId}/lessons/${lessonId}`, {
           values,
         });
       } else {
@@ -80,7 +82,7 @@ export function LessonsForm({ initialData }: LessonsFormProps) {
   const onDelete = async () => {
     try {
       setIsLoading(true);
-      await axios.delete(`/api/${disciplineId}/lessons/${LessonsId}`);
+      await axios.delete(`/api/${disciplineId}/lessons/${lessonId}`);
       refresh();
       push(`/${disciplineId}/lessons`);
       toast.success('Atividade deletada!');
