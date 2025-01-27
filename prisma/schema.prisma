@@ -75,8 +75,8 @@ model Topics {
   id           String     @id @default(uuid())
   disciplineId String
   discipline   Discipline @relation("DisciplineToTopics", fields: [disciplineId], references: [id])
-  day          String
-  name         String
+  title        String
+  description  String
   createdAt    DateTime   @default(now())
   updatedAt    DateTime   @updatedAt
 
@@ -88,7 +88,7 @@ model Test {
   disciplineId String
   discipline   Discipline @relation("DisciplineToTest", fields: [disciplineId], references: [id])
   day          String
-  name         String
+  topic        String
   createdAt    DateTime   @default(now())
   updatedAt    DateTime   @updatedAt
 
@@ -99,8 +99,8 @@ model Grades {
   id           String     @id @default(uuid())
   disciplineId String
   discipline   Discipline @relation("DisciplineToGrades", fields: [disciplineId], references: [id])
-  day          String
-  name         String
+  description  String
+  grade        String
   createdAt    DateTime   @default(now())
   updatedAt    DateTime   @updatedAt
 
