@@ -14,7 +14,7 @@ export function Navbar({ className, ...props }: NavbarProps) {
   const routes = [
     {
       href: `/${disciplineId}`,
-      label: 'Dashboard',
+      label: 'Página Inicial',
       active: pathname === `/${disciplineId}`,
     },
     {
@@ -47,11 +47,11 @@ export function Navbar({ className, ...props }: NavbarProps) {
       label: 'Prova',
       active: pathname === `/${disciplineId}/tests`,
     },
-    // {
-    //   href: `/${disciplineId}/notas`,
-    //   label: 'Notas',
-    //   active: pathname === `/${disciplineId}/notas`,
-    // },
+    {
+      href: `/${disciplineId}/grades`,
+      label: 'Notas',
+      active: pathname === `/${disciplineId}/grades`,
+    },
   ];
   return (
     <nav className={cn('flex items-center space-x-4 lg:space-x-6', className)}>
