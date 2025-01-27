@@ -42,11 +42,11 @@ export function Navbar({ className, ...props }: NavbarProps) {
       label: 'Tópicos',
       active: pathname === `/${disciplineId}/topics`,
     },
-    // {
-    //   href: `/${disciplineId}/prova`,
-    //   label: 'Prova',
-    //   active: pathname === `/${disciplineId}/prova`,
-    // },
+    {
+      href: `/${disciplineId}/tests`,
+      label: 'Prova',
+      active: pathname === `/${disciplineId}/tests`,
+    },
     // {
     //   href: `/${disciplineId}/notas`,
     //   label: 'Notas',
